@@ -1,0 +1,193 @@
+/*reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main st */
+html,
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+    font-size: 1.8rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding-bottom: 50px;
+}
+
+h4 {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding-bottom: 20px;
+}
+
+p {
+    font-size: 1rem;
+    margin: 10px 0;
+    line-height: 1.7em;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*Utilities Classes*/
+.container {
+    margin: auto;
+    max-width: 1800px;
+    width: 90%;
+    overflow: auto;
+    padding: 0 20px;
+}
+
+.large {
+    font-size: 20px;
+}
+
+.btn {
+    display: inline-block;
+    font-size: 15px;
+    padding: 15px 40px;
+    letter-spacing: 1px;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.btn-outline:hover {
+    background: #fff;
+    color: black;
+}
+
+/*NavBar*/
+#navbar {
+    overflow: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#navbar a {
+    color: #000;
+}
+
+#navbar .logo {
+    float: left;
+    padding-top: 12px;
+}
+
+#navbar img {
+    height: 80px;
+}
+
+#navbar ul {
+    list-style: none;
+    float: right;
+}
+
+#navbar ul li {
+    float: left;
+}
+
+#navbar ul li a {
+    display: block;
+    padding: 35px;
+    text-align: center;
+}
+
+
+
+
+/*showcase */
+#showcase {
+    background: url('background.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 500px;
+    text-align: center;
+    padding: 100px;
+}
+
+#showcase .btn {
+    margin-top: 250px;
+}
+
+/*projects */
+#projects {
+    padding: 80px 0;
+}
+
+.projects-row {
+    display: flex;
+    gap: 20px;
+}
+
+.projects-row img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.projects-row .projects-row-details {
+    width: 80%;
+    height: 150px;
+    border-radius: 10px;
+    padding: 10px;
+    zoom: 5;
+}
+   
+
+
+/*About */
+#about {
+    padding: 80px 0;
+    background: #f9f9f9;
+}
+
+.about-row {
+    display: flex;
+}
+
+.about-row-experience,
+.about-row-me {
+    width: 50%;
+    padding-left: 50px;
+}
+
+/*Contact */
+#contact {
+    padding: 70px 0
+}
+
+.contact-row {
+    display: flex
+}
+
+.contact-row-icon {
+    width: 33%;
+    text-align: center;
+}
+
+.contact-row-icon img {
+    height: 60px;
+}
+
+/*Footer */
+#mainfooter {
+    background: #ffffff;
+    text-align: center;
+    padding: 30px;
+}
