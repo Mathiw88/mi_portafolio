@@ -1,14 +1,19 @@
-/*reset */
+/* ===== Reset & Base ===== */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box
 }
 
-/* Main st */
 html,
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    line-height: 1.6
+}
+
+a {
+    text-decoration: none;
+    color: inherit
 }
 
 h2 {
@@ -16,178 +21,285 @@ h2 {
     text-align: center;
     text-transform: uppercase;
     font-weight: 500;
-    padding-bottom: 50px;
+    padding-bottom: 32px
 }
 
 h4 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     text-transform: uppercase;
     font-weight: 500;
-    padding-bottom: 20px;
+    padding-bottom: 12px
 }
 
 p {
     font-size: 1rem;
     margin: 10px 0;
-    line-height: 1.7em;
+    line-height: 1.7
 }
 
-a {
-    text-decoration: none;
-}
-
-/*Utilities Classes*/
 .container {
-    margin: auto;
-    max-width: 1800px;
     width: 90%;
-    overflow: auto;
-    padding: 0 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 12px
 }
 
 .large {
-    font-size: 20px;
+    font-size: 1.125rem
 }
 
+/* ===== Botones ===== */
 .btn {
     display: inline-block;
-    font-size: 15px;
-    padding: 15px 40px;
-    letter-spacing: 1px;
+    font-size: .95rem;
+    padding: 12px 28px;
+    letter-spacing: .5px;
+    border-radius: 8px
 }
 
 .btn-outline {
     background: transparent;
-    border: 1px solid #fff;
+    border: 1.5px solid #fff;
     color: #fff;
     text-transform: uppercase;
-    font-weight: 300;
+    font-weight: 500
 }
 
 .btn-outline:hover {
     background: #fff;
-    color: black;
+    color: #111
 }
 
-/*NavBar*/
+/* ===== Navbar con menú hamburguesa ===== */
 #navbar {
-    overflow: auto;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    background: #111927;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000
 }
 
-#navbar a {
-    color: #000;
+#navbar .nav-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 0
 }
 
-#navbar .logo {
-    float: left;
-    padding-top: 12px;
+#navbar .logo img {
+    height: 56px;
+    width: 56px;
+    object-fit: cover;
+    border-radius: 8px
 }
 
-#navbar img {
-    height: 80px;
+#navbar ul,
+#navbar ul li {
+    float: none !important
 }
 
 #navbar ul {
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none
+}
+
+.nav-toggle {
+    display: none
+}
+
+.burger {
+    display: none;
+    font-size: 28px;
+    color: #fff;
+    background: none;
+    border: 0;
+    cursor: pointer
+}
+
+#navbar .nav-links {
     list-style: none;
-    float: right;
+    display: flex;
+    gap: 20px
 }
 
-#navbar ul li {
-    float: left;
+#navbar .nav-links li a {
+    color: #fff;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 6px
 }
 
-#navbar ul li a {
-    display: block;
-    padding: 35px;
-    text-align: center;
+#navbar .nav-links li a:hover {
+    background: rgba(255, 255, 255, .1)
 }
 
+@media(max-width:768px) {
+    .burger {
+        display: block
+    }
 
+    #navbar .nav-links {
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: #111927;
+        border-top: 1px solid rgba(255, 255, 255, .08);
+        flex-direction: column;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height .3s ease
+    }
 
+    #navbar .nav-links li a {
+        display: block;
+        padding: 14px 12px;
+        text-align: center;
+        border-radius: 0
+    }
 
-/*showcase */
+    .nav-toggle:checked~.nav-links {
+        max-height: 320px
+    }
+}
+
+/* ===== Showcase / Hero ===== */
 #showcase {
-    background: url('background.jpeg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 500px;
+    min-height: 60svh;
+    display: grid;
+    place-items: center;
     text-align: center;
-    padding: 100px;
+    background: url('background.jpeg') center/cover no-repeat;
+    padding: 40px 0
 }
 
-#showcase .btn {
-    margin-top: 250px;
-}
-
-/*projects */
+/* ===== Projects ===== */
 #projects {
-    padding: 80px 0;
+    padding: 56px 0
 }
 
 .projects-row {
-    display: flex;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px
 }
 
-.projects-row img {
+.projects-row-details {
+    border-radius: 14px;
+    overflow: hidden;
+    background: #fff
+}
+
+.projects-row-details img {
     width: 100%;
-    height: 100%;
+    height: 220px;
+    display: block;
     object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .12);
+    transition: transform .25s ease, box-shadow .25s ease
 }
 
-.projects-row .projects-row-details {
-    width: 80%;
-    height: 150px;
-    border-radius: 10px;
-    padding: 10px;
-    zoom: 5;
+.projects-row-details img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, .18)
 }
-   
 
-
-/*About */
+/* ===== About ===== */
 #about {
-    padding: 80px 0;
-    background: #f9f9f9;
+    padding: 56px 0;
+    background: #f9f9f9
 }
 
 .about-row {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px
 }
 
 .about-row-experience,
 .about-row-me {
-    width: 50%;
-    padding-left: 50px;
+    padding: 0
 }
 
-/*Contact */
+.about-row h4 {
+    color: #128554
+}
+
+/* ===== Contact ===== */
 #contact {
-    padding: 70px 0
+    padding: 56px 0
 }
 
 .contact-row {
-    display: flex
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    text-align: center
 }
 
 .contact-row-icon {
-    width: 33%;
-    text-align: center;
+    padding: 8px 12px
 }
 
 .contact-row-icon img {
-    height: 60px;
+    height: 44px;
+    margin-bottom: 8px
 }
 
-/*Footer */
+/* ===== Footer ===== */
 #mainfooter {
-    background: #ffffff;
+    background: #fff;
     text-align: center;
-    padding: 30px;
+    padding: 24px;
+    border-top: 1px solid #eee
+}
+
+/* ===== Breakpoints ===== */
+@media(min-width:600px) {
+    #showcase {
+        min-height: 62svh
+    }
+
+    .projects-row {
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    .projects-row-details img {
+        height: 280px
+    }
+
+    .about-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px
+    }
+
+    .about-row-experience,
+    .about-row-me {
+        padding: 0 12px
+    }
+
+    .contact-row {
+        grid-template-columns: repeat(3, 1fr);
+        text-align: left
+    }
+}
+
+@media(min-width:900px) {
+    .projects-row {
+        grid-template-columns: repeat(3, 1fr)
+    }
+
+    .projects-row-details img {
+        height: 320px
+    }
+
+    .about-row-experience,
+    .about-row-me {
+        padding: 0 20px
+    }
 }
